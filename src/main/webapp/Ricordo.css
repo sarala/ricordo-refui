@@ -1,0 +1,123 @@
+.pannel-Border{	
+	border-style:solid;	
+	border-color:#D0E4F6;	
+}
+.pannel-Border-padding{	
+	border-style:solid;	
+	border-color:#D0E4F6;	
+	padding-bottom: 100px;	
+	spacing:100px;
+}
+
+.contacts-ListRow td {
+	border-bottom: 1px solid #E2E2E2;
+}
+
+table {
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	spacing: 0px;
+}
+
+td {
+	border-collapse: collapse;
+	margin: 0px;
+	padding: 0px;
+	spacing: 0px;
+}
+
+th,td {
+	padding: 0px;
+}
+
+td.add-contact-label {
+	text-align: left;
+}
+
+add-contact-input {
+	border: 1px solid red;
+	border-collapse: collapse;
+	margin-right: 0px;
+	margin-left: auto;
+}
+
+td.contacts-NavContainer {
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+td.contacts-ListMenu {
+	background-color: #D0E4F6;
+	padding-bottom: 6px;
+}
+
+td.contacts-ButtonMenu {
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 4px;
+}
+
+td.contacts-Space {
+	background-color: #D0E4F6;
+	padding-bottom: 12px;
+}
+
+td.contacts-ListContainer {
+	padding-right: 10px;
+}
+
+.contacts-HeaderContainer {
+	padding-right: 10px;
+}
+
+.query-Title{
+	text-align: center;
+	font-size: 40;
+	font-weight:bold;
+	color: black;	
+	padding-bottom: 12px;
+	padding-top: 12px;
+}
+
+td.contacts-ListCheckbox {
+	padding-right: 4px;
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+td.contacts-ListName {
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.gwt-DecoratorPanel .topCenter {
+	height: 100%;
+	width: 100%;
+}
+
+td.search-labels{
+	size: 100px;
+}
+
+.resultsTable {
+  border-top: thin solid #444444;
+  border-left: thin solid #444444;
+  border-right: thin solid #111111;
+  border-bottom: thin solid #111111;
+}
+.results-OddRow {
+  background-color: #ffffff;
+}
+
+.results-EvenRow {
+  background-color:  #D0E4F6;
+}
+
+.results-ColumnLabelCell {
+  border-width: 0 0 1px 0;
+  border-style: solid;
+  border-color: black;
+  margin: 0;
+  font-weight: bold;
+}

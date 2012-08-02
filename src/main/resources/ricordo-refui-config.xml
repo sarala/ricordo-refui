@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <import resource="classpath:ricordo-owlkb-config.xml"/>
+    <import resource="classpath:ricordo-rdfstore-config.xml"/>
+
+    <bean id="config-1" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="order" value="1"/>
+        <property name="ignoreResourceNotFound" value="true"/>
+        <property name="location" value="classpath:config.properties"/>
+    </bean>
+
+    <bean id="servicesHandler" class="uk.ac.ebi.ricordo.refui.server.ServicesHandler">
+        <property name="queryTemplateService" ref="queryTemplateServiceImpl"/>
+        <property name="relationsService" ref="relationsServiceImpl"/>
+        <property name="rdfStoreService" ref="rdfStoreServiceImpl"/>
+        <property name="owlKbService" ref="owlKbElkService"/>
+        <property name="bioQualifierService" ref="bioqualifierServiceImpl"/>
+    </bean>
+</beans>
