@@ -17,7 +17,7 @@
         <property name="queryTemplateService" ref="queryTemplateServiceImpl"/>
         <property name="relationsService" ref="relationsServiceImpl"/>
         <property name="rdfStoreService" ref="rdfStoreServiceImpl"/>
-        <property name="owlKbService" ref="owlKbElkService"/>
+        <property name="owlKbService" ref="owlLinkKBService"/>
         <property name="bioQualifierService" ref="bioqualifierServiceImpl"/>
     </bean>
 </beans>

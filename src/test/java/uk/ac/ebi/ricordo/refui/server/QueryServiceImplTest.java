@@ -1,16 +1,16 @@
 package uk.ac.ebi.ricordo.refui.server;
 
-import uk.ac.ebi.ricordo.refui.client.QueryService;
-import uk.ac.ebi.ricordo.refui.client.exception.ManchesterQueryException;
-import uk.ac.ebi.ricordo.refui.shared.ModelDetailsLight;
-import uk.ac.ebi.ricordo.refui.shared.ModelSearch;
-import uk.ac.ebi.ricordo.refui.shared.VariableDetailsLight;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import uk.ac.ebi.ricordo.refui.client.QueryService;
+import uk.ac.ebi.ricordo.refui.client.exception.ManchesterQueryException;
+import uk.ac.ebi.ricordo.refui.shared.ModelDetailsLight;
+import uk.ac.ebi.ricordo.refui.shared.ModelSearch;
+import uk.ac.ebi.ricordo.refui.shared.VariableDetailsLight;
 
 import java.util.ArrayList;
 
@@ -68,4 +68,9 @@ public class QueryServiceImplTest {
     }
 
 
+    @Test
+    public void testModelSearch(){
+        modelSearch.setManQueryText("GO_0005892");
+        assertEquals("GO_0005892", modelSearch.getManQueryText());
+    }
 }

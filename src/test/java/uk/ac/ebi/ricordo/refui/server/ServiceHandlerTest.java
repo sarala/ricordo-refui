@@ -16,7 +16,7 @@ import static junit.framework.Assert.assertEquals;
  * Time: 11:43
  */
 @RunWith(SpringJUnit4ClassRunner.class )
-@ContextConfiguration(locations={"classpath::ricordo-refui-config.xml.xml"})
+@ContextConfiguration(locations={"classpath:ricordo-refui-config.xml"})
 public class ServiceHandlerTest {
 
     @Autowired
@@ -31,21 +31,17 @@ public class ServiceHandlerTest {
 
     @Test
     public void testQueryTemplateService(){
-
-        assertEquals(7,servicesHandler.getQueryTemplateService().getQueryTemplateList().size());
+        assertEquals(6,servicesHandler.getQueryTemplateService().getQueryTemplateList().size());
     }
 
     @Test
     public void testOwlKbService(){
-        servicesHandler.getOwlKbService().startService();
         assertEquals(2, servicesHandler.getOwlKbService().getTerms("GO_0005892").size());
-        servicesHandler.getOwlKbService().stopService();
     }
 
     @Test
-    public void testMiriamServiceService(){
-        //assertEquals("",servicesHandler.getMiriamLinkService().getMiriamURI("http://purl.org/obo/owlapi/gene_ontology#GO_0005892"));
-         assertEquals("",servicesHandler.getMiriamLinkService().getURI("GO","GO:0005892"));
+    public void testMiriamService(){
+         assertEquals("urn:miriam:obo.go:GO%3A0005892",servicesHandler.getMiriamLinkService().getURI("GO","GO:0005892"));
     }
 
 }

@@ -31,7 +31,7 @@ public class QueryServiceImpl extends RemoteServiceServlet implements
     public QueryServiceImpl() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:ricordo-refui-config.xml");
         servicesHandler = (ServicesHandler)ctx.getBean("servicesHandler");
-        servicesHandler.getOwlKbService().startService();
+//        servicesHandler.getOwlKbService().startService();
     }
 
     public ArrayList<VariableDetailsLight> getVariableList(ModelSearch modelSearch) {
