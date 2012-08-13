@@ -156,7 +156,7 @@ public class QueryServiceImpl extends RemoteServiceServlet implements
     @Override
     public ArrayList<ModelDetailsLight> searchModelData(ModelSearch modelSearch) {
 
-        HashMap<String, ModelDetails> modelDetailsList = new HashMap<String, ModelDetails>();
+        LinkedHashMap<String, ModelDetails> modelDetailsList = new LinkedHashMap<String, ModelDetails>();
         int i = 1;
         for (OntologyTermData term : modelSearch.getTermList()) {
             ResourceList resourceList = new ResourceList();
@@ -180,7 +180,7 @@ public class QueryServiceImpl extends RemoteServiceServlet implements
         return getContactDetails(modelDetailsList);
     }
 
-    private ArrayList<ModelDetailsLight> getContactDetails(HashMap<String, ModelDetails> modelDetailsList) {
+    private ArrayList<ModelDetailsLight> getContactDetails(LinkedHashMap<String, ModelDetails> modelDetailsList) {
         ArrayList<ModelDetailsLight> modelDetailsLight = new ArrayList<ModelDetailsLight>();
 
         Iterator<String> it = modelDetailsList.keySet().iterator();

@@ -1,20 +1,15 @@
 package uk.ac.ebi.ricordo.refui.client.presenter;
 
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.List;
-
-import com.google.gwt.event.dom.client.ChangeEvent;
-import com.google.gwt.event.dom.client.ChangeHandler;
-import com.google.gwt.event.dom.client.ClickEvent;
-import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.event.dom.client.HasChangeHandlers;
-import com.google.gwt.event.dom.client.HasClickHandlers;
-import com.google.gwt.event.dom.client.KeyUpEvent;
-import com.google.gwt.event.dom.client.KeyUpHandler;
+import com.google.gwt.event.dom.client.*;
 import com.google.gwt.event.logical.shared.SelectionEvent;
 import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.event.shared.HandlerManager;
+import com.google.gwt.user.client.Window;
+import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.google.gwt.user.client.ui.HasWidgets;
+import com.google.gwt.user.client.ui.SuggestBox;
+import com.google.gwt.user.client.ui.SuggestOracle;
+import com.google.gwt.user.client.ui.Widget;
 import uk.ac.ebi.ricordo.refui.client.AppController;
 import uk.ac.ebi.ricordo.refui.client.QueryServiceAsync;
 import uk.ac.ebi.ricordo.refui.client.event.MSyntaxQueryCancelEvent;
@@ -24,12 +19,10 @@ import uk.ac.ebi.ricordo.refui.client.view.RelationSuggestBox;
 import uk.ac.ebi.ricordo.refui.client.view.TermSuggestBox;
 import uk.ac.ebi.ricordo.refui.shared.ModelDetailsLight;
 import uk.ac.ebi.ricordo.refui.shared.VariableSearch;
-import com.google.gwt.user.client.Window;
-import com.google.gwt.user.client.rpc.AsyncCallback;
-import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.SuggestBox;
-import com.google.gwt.user.client.ui.SuggestOracle;
-import com.google.gwt.user.client.ui.Widget;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 public class ManchesterSyntaxPresenter implements Presenter {	
 
@@ -80,9 +73,17 @@ public class ManchesterSyntaxPresenter implements Presenter {
 		container.clear();
 		container.add(display.asWidget());
 		uploadManQueryType();
+//        setUpManQueryPanel();
 	}
-	
-	public void bind() {
+
+    private void setUpManQueryPanel() {
+        display.setManQueryTypeSelection(0);
+        display.constructManQueryPanel(display.getManQueryTypeListBoxText());
+        manQuery = display.getManQueryTypeListBoxText();
+        setSuggestBoxHandlers();
+    }
+
+    public void bind() {
 		
 		display.getSelectButton().addClickHandler(new ClickHandler() {			
 			public void onClick(ClickEvent event) {	
