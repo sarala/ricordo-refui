@@ -8,7 +8,7 @@ public class TitlePanel extends VerticalPanel{
 	public static String ANNOT_TITLE = ("Annotation Editor");
 	public static String COMP_TITLE = ("Composite Editor");
 	public static String QUERY_TITLE = ("Query Service");
-	public static String MAIN_TITLE = ("Semantic Interoperability Framework - Reference User Interface");
+	public static String MAIN_TITLE = ("Reference User Interface");
 	public static String MAN_TITLE = ("Manchester Query Creator");
 	
 	public TitlePanel(String title){

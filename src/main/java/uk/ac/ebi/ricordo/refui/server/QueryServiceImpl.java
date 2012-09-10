@@ -23,7 +23,7 @@ import java.util.*;
 public class QueryServiceImpl extends RemoteServiceServlet implements
         QueryService {
 
-    public static final String[] ONTOLIST = new String[] { "FMA", "PATO", "GO", "CHEBI", "HP" };
+    public static final String[] ONTOLIST = new String[] { "FMA", "PATO", "GO", "CHEBI" };
 
     private ServicesHandler servicesHandler;
 
@@ -264,7 +264,7 @@ public class QueryServiceImpl extends RemoteServiceServlet implements
         }
 
         String query = variableURL+",http://biomodels.net/biology-qualifiers/"+property+","+miriumURN;
-        servicesHandler.getRdfStoreService().insert("insertStatement",query);
+        servicesHandler.getRdfStoreService().insert(query, "insertStatement");
     }
 
 }

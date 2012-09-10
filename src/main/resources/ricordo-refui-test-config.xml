@@ -4,5 +4,5 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="queryServiceImple" class="uk.ac.ebi.ricordo.refui.server.QueryServiceImpl"/>
+    <bean id="queryService" class="uk.ac.ebi.ricordo.refui.server.QueryServiceImpl"/>
 </beans>
