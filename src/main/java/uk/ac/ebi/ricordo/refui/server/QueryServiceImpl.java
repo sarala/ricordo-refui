@@ -263,7 +263,7 @@ public class QueryServiceImpl extends RemoteServiceServlet implements
             miriumURN = servicesHandler.getOwlKbService().getEquivalentTerms(annotation).get(0).getId();
         }
 
-        String query = variableURL+",http://biomodels.net/biology-qualifiers/"+property+","+miriumURN;
+        String query = variableURL+","+ servicesHandler.getBioQualifierService().getQualifierURL()+property+","+miriumURN;
         servicesHandler.getRdfStoreService().insert(query, "insertStatement");
     }
 
