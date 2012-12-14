@@ -19,5 +19,6 @@
         <property name="rdfStoreService" ref="rdfStoreServiceImpl"/>
         <property name="owlKbService" ref="owlLinkKBService"/>
         <property name="bioQualifierService" ref="bioqualifierServiceImpl"/>
+        <property name="ontolist" value="${ontologies}"/>
     </bean>
 </beans>

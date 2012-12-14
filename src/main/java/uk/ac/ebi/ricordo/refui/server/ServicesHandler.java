@@ -26,6 +26,7 @@ public class ServicesHandler {
     private RdfStoreService rdfStoreService;
     private OwlKbService owlKbService;
     private QualifierService bioQualifierService;
+    private String [] ontolistArray;
 
     public ServicesHandler() {
         setUpOntologyService();
@@ -93,5 +94,13 @@ public class ServicesHandler {
 
     public void setBioQualifierService(QualifierService bioQualifierService) {
         this.bioQualifierService = bioQualifierService;
+    }
+
+    public void setOntolist(String ontolist) {
+        ontolistArray = ontolist.split(",");
+    }
+
+    public String[] getOntolistArray() {
+        return ontolistArray;
     }
 }

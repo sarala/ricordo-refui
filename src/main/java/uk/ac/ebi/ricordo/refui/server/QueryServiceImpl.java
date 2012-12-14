@@ -23,15 +23,13 @@ import java.util.*;
 public class QueryServiceImpl extends RemoteServiceServlet implements
         QueryService {
 
-    public static final String[] ONTOLIST = new String[] { "FMA", "PATO", "GO", "CHEBI" };
-
     private ServicesHandler servicesHandler;
-
 
     public QueryServiceImpl() {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:ricordo-refui-config.xml");
         servicesHandler = (ServicesHandler)ctx.getBean("servicesHandler");
 //        servicesHandler.getOwlKbService().startService();
+
     }
 
     public ArrayList<VariableDetailsLight> getVariableList(ModelSearch modelSearch) {
@@ -97,8 +95,8 @@ public class QueryServiceImpl extends RemoteServiceServlet implements
     @Override
     public LinkedList<String> getOntoTerms(String ontoTerm) throws RemoteOntologyServiceException {
         LinkedList<String> suggestions = new LinkedList<String>();
-        for(int i=0;i<ONTOLIST.length;i++){
-            suggestions = addSuggestions(ONTOLIST[i],suggestions, ontoTerm);
+        for(int i=0;i<servicesHandler.getOntolistArray().length;i++){
+            suggestions = addSuggestions(servicesHandler.getOntolistArray()[i],suggestions, ontoTerm);
         }
         if(suggestions.size()>20){
             return new LinkedList<String>(suggestions.subList(0, 20));
