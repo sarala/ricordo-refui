@@ -10,7 +10,7 @@
     <packaging>war</packaging>
 
     <properties>
-        <spring.version>3.1.1.RELEASE</spring.version>
+        <spring.version>5.2.22.RELEASE</spring.version>
         <jackson-json.version>1.9.4</jackson-json.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
